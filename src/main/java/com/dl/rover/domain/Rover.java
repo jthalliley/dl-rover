@@ -33,11 +33,11 @@ public class Rover {
         Point newPoint = grid.consideredPoint(getLocation(), facingDirection, movingDirection);
 
         if (grid.hasObstacle(newPoint)) {
-            System.out.println("!!! Cannot move " + movingDirection.display() + " from " + getLocation() + " due to obstacle.");
-            return;
-        }
-
-        setLocation(newPoint);
+            System.out.println("!!! Cannot move " + movingDirection.display() +
+			       " from " + getLocation() + " due to obstacle.");
+        } else {
+	    setLocation(newPoint);
+	}
     }
 
     public void turn(final MovingDirection movingDirection) {
@@ -51,7 +51,8 @@ public class Rover {
         for (char command : commands) {
             MovingDirection movingDirection = MovingDirection.valueOf(command);
 
-            System.out.println("Attempting to move " + movingDirection.display() + " from " + getLocation() + " while facing " + getFacingDirection().display());
+            System.out.println("Attempting to move " + movingDirection.display() +
+			       " from " + getLocation() + " while facing " + getFacingDirection().display());
 
             switch (movingDirection) {
             case F:
