@@ -45,7 +45,9 @@ public class Grid {
         }
     }
 
-    public Point consideredPoint(final Point fromPoint, final FacingDirection facingDirection, final MovingDirection movingDirection) {
+    public Point consideredPoint(final Point fromPoint,
+				 final FacingDirection facingDirection,
+				 final MovingDirection movingDirection) {
 
         Point result = fromPoint;
 
